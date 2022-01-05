@@ -13,7 +13,7 @@ class _MySecondPageState extends State<MySecondPage> {
         title: Text('Second Screen'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go back to Home Screen'),
           onPressed: () {
             Navigator.pop(context);

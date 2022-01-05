@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:petstore/landingpage.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,8 +33,8 @@ class _loginpagestate extends State<loginpage> {
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Welcome',
+                    child: const Text(
+                      'Welcome to the Pet Store',
                       style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.w500,
@@ -44,7 +43,7 @@ class _loginpagestate extends State<loginpage> {
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
-                    child: Text(
+                    child: const Text(
                       'Sign in',
                       style: TextStyle(fontSize: 20),
                     )),
@@ -52,7 +51,7 @@ class _loginpagestate extends State<loginpage> {
                   padding: EdgeInsets.all(10),
                   child: TextField(
                     controller: nameController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'User Name',
                     ),
@@ -63,25 +62,28 @@ class _loginpagestate extends State<loginpage> {
                   child: TextField(
                     obscureText: true,
                     controller: passwordController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Password',
                     ),
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: (){
                     //forgot password screen
                   },
-                  textColor: Colors.blue,
-                  child: Text('Forgot Password',style: TextStyle(fontSize: 20),),
+                  style: TextButton.styleFrom(
+                    primary: Colors.yellow
+                  ),
+                  child: Text('Forgot Password',style: const TextStyle(fontSize: 20),),
                 ),
                 Container(
                     height: 50,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: RaisedButton(
-                      textColor: Colors.white,
-                      color: Colors.blue,
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.teal
+                      ),
                       child: Text('Login'),
                       onPressed: () {
                         Navigator.push(
@@ -90,23 +92,24 @@ class _loginpagestate extends State<loginpage> {
                         );
                       },
                     )),
-                Container(
-                    child: Row(
-                      children: <Widget>[
-                        Text('Dont have a account ?',style: TextStyle(fontSize: 18),),
-                        FlatButton(
-                          textColor: Colors.blue,
-                          child: Text(
-                            'Sign up',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          onPressed: () {
-                            //signup screen
-                          },
-                        )
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ))
+                Row(
+                  children: <Widget>[
+                    const Text('Dont have a account ?',style: TextStyle(fontSize: 18),),
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        primary: Colors.blue
+                      ),
+                      child: const Text(
+                        'Sign up',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {
+                        //signup screen
+                      },
+                    )
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                )
               ],
             )));
   }
@@ -117,11 +120,11 @@ class _MySecondPageState extends State<MySecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: const Text('Second Screen'),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Go back to Home Screen'),
+        child: ElevatedButton(
+          child: const Text('Go back to Home Screen'),
           onPressed: () {
             Navigator.pop(context);
           },
