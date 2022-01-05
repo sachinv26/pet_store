@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'mainpage.dart';
 void main() {
   runApp(MaterialApp(
     home: loginpage(),
@@ -10,10 +10,7 @@ class loginpage extends StatefulWidget {
   @override
   _loginpagestate createState() => _loginpagestate();
 }
-class MySecondPage extends StatefulWidget {
-@override
-_MySecondPageState createState() => _MySecondPageState();
-}
+
 
 
 class _loginpagestate extends State<loginpage> {
@@ -88,7 +85,7 @@ class _loginpagestate extends State<loginpage> {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => MySecondPage()),
+                            MaterialPageRoute(builder: (context) => SliverAppBarWidget()),
                         );
                       },
                     )),
@@ -115,21 +112,3 @@ class _loginpagestate extends State<loginpage> {
   }
 }
 
-class _MySecondPageState extends State<MySecondPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Go back to Home Screen'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-    );
-  }
-}
