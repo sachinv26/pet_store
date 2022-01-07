@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'mainpage.dart';
-void main() {
-  runApp(MaterialApp(
-    home: loginpage(),
-  ));
-}
+
+void main() => runApp(MaterialApp(
+      home: loginpage(),
+    ));
 
 class loginpage extends StatefulWidget {
   @override
   _loginpagestate createState() => _loginpagestate();
 }
-
-
 
 class _loginpagestate extends State<loginpage> {
   TextEditingController nameController = TextEditingController();
@@ -34,7 +31,7 @@ class _loginpagestate extends State<loginpage> {
                       'Welcome to the Pet Store',
                       style: TextStyle(
                           color: Colors.blue,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           fontSize: 30),
                     )),
                 Container(
@@ -66,36 +63,37 @@ class _loginpagestate extends State<loginpage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: (){
+                  onPressed: () {
                     //forgot password screen
                   },
-                  style: TextButton.styleFrom(
-                    primary: Colors.yellow
+                  style: TextButton.styleFrom(primary: Colors.yellow),
+                  child: Text(
+                    'Forgot Password',
+                    style: const TextStyle(fontSize: 20),
                   ),
-                  child: Text('Forgot Password',style: const TextStyle(fontSize: 20),),
                 ),
                 Container(
                     height: 50,
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.teal
-                      ),
+                      style: ElevatedButton.styleFrom(primary: Colors.teal),
                       child: Text('Login'),
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SliverAppBarWidget()),
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SliverAppBarWidget()),
                         );
                       },
                     )),
                 Row(
                   children: <Widget>[
-                    const Text('Dont have a account ?',style: TextStyle(fontSize: 18),),
+                    const Text(
+                      'Dont have a account ?',
+                      style: TextStyle(fontSize: 18),
+                    ),
                     TextButton(
-                      style: TextButton.styleFrom(
-                        primary: Colors.blue
-                      ),
+                      style: TextButton.styleFrom(primary: Colors.blue),
                       child: const Text(
                         'Sign up',
                         style: TextStyle(fontSize: 20),
@@ -111,4 +109,3 @@ class _loginpagestate extends State<loginpage> {
             )));
   }
 }
-
